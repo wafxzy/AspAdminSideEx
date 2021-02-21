@@ -1,0 +1,54 @@
+﻿@model IEnumerable<examadmin.uss>
+
+@{
+    ViewBag.Title = "userlist";
+}
+
+<h2>userlist</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.loginuser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lattnameuser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateordered)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.loginuser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lattnameuser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateordered)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_u }) |
+           
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_u })
+        </td>
+    </tr>
+}
+
+</table>
